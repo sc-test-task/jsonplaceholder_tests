@@ -9,5 +9,9 @@ class Client:
         return r.get(url=JSONPLACEHOLDER_HOST + path)
 
     @allure.step
-    def get_posts(self, post_id: int = None):
-        return self._get(path=f"/posts/{post_id if post_id else ''}")
+    def get_all_posts(self):
+        return self._get(path=f'/posts')
+
+    @allure.step
+    def get_post_by_id(self, post_id: int):
+        return self._get(path=f'/posts/{post_id}')
