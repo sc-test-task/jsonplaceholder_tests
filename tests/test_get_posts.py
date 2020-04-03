@@ -8,5 +8,5 @@ class TestGetPosts:
 
     @allure.title('Positive. Get all posts')
     def test_get_all_posts(self):
-        response = Client().get_posts()
+        response = Client().get_all_posts()
         check_get_all_posts_response(response)
